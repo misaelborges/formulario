@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fomulário de Inscrição</title>
+    <link rel="shortcut icon" href="imagens/download.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilo/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <form id="formulario">
+            <fieldset>
+                <legend>Formulario para corrida</legend>
+                Nome: <input type="text" name="nome" id="nome"> <br>
+                CPF: <input type="tel" name="cpf" id="cpf"> <br>
+                Data de Nascimento: <input type="date" name="nascimento" id="nascimento"> <br>
+                Endereço: <input type="text" name="endereco" id="endereco">
+                Cep: <input type="tel" name="num" id="num"> <br>
+                Telefone: <input type="tel" name="numero" id="numero" placeholder="(48)9999-9999">
+                E-mail: <input type="text" name="email" id="email">
+                <div id="distancia">
+                    <p>Distancia</p>
+                    <input type="radio" name="checket" id="5" checked> 5Km
+                    <input type="radio" name="checket" id="10"> 10Km
+                    <input type="radio" name="checket" id="20"> 20Km
+                </div>
+                <button id="botao">Inserir</button>
+            </fieldset>
+        </form>
+        <h2>Inscritos</h2>
+        <label for="Pesquisar">Pesquisar</label>
+        <input type="text" placeholder="Digite o nome do corredor">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Idade</th>
+                    <th>Telefone</th>
+                    <th>Distância</th>
+                </tr>
+            </thead>
+            <tbody id="corredores">
+
+            </tbody>
+        </table>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
