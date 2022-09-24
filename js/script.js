@@ -1,44 +1,41 @@
-let botao = document.querySelector('#botao')
-botao.addEventListener('click', function(){
+let botaoInserir = document.querySelector('#botao')
+botaoInserir.addEventListener('click', function(){
+
     let formulario = document.querySelector('#formulario')
 
-    let atividade = listaCorredor(formulario)
+    let corredor = dadosFormulario(formulario)
+    let corredorTr = constroiTr(corredor)
 
-    if (atividade.nome == '' || atividade.cpf == '' || atividade.nascimeto == '' || atividade.endereco == '' || atividade.cep == '' || atividade.numero == '' || atividade.email == '' || atividade.checket == ''){
-        window.alert('preencher todos os campo!!!')
-    } else {
-        let atividadeTr = constroiTr(atividade)
-        let tabela = document.querySelector('#corredores')
-        tabela.appendChild(atividade)
-        formulario.reset()
-    }
+    let tabela = document.querySelector('#corredores')
+        
+    tabela.appendChild(corredorTr)
+    formulario.reset()
 })
 
-function listaCorredor(dados) {
+function dadosFormulario(form) {
     let corredor = {
-        nome: dados.nome.value,
-        cpf: dados.cps.value,
-        nascimeto: dados.nascimeto.value,
-        endereco: dados.endereco.value,
-        cep: dados.cep.value,
-        numero: dados.numero.value,
-        email: dados.email.value,
-        checket: dados.checket.value,
+        nome: form.nome.value,
+        cpf: form.cpf.value,
+        dataNacimento: form.nascimento.value,
+        endereco: form.endereco.value,
+        cep: form.cep.value,
+        numero: form.numero.value,
+        email:form.email.value,
         distancia: distancia(checket), 
         idade: idade(nascimeto.value)
     }
     return corredor
 }
 
-function constroiTr(paciente) {
+function constroiTr(corredor) {
     let atividadeTr = document.createElement('tr')
     atividadeTr.classList.add('paciente')
 
-    atividadeTr.appendChild(constroiTd(paciente.nome))
-    atividadeTr.appendChild(constroiTd(paciente.cpf))
-    atividadeTr.appendChild(constroiTd(paciente.idade))
-    atividadeTr.appendChild(constroiTd(paciente.numero))
-    atividadeTr.appendChild(constroiTd(paciente.distancia))
+    atividadeTr.appendChild(criarTd(corredor.nome))
+    atividadeTr.appendChild(criarTd(corredor.cpf))
+    atividadeTr.appendChild(criarTd(corredor.idade))
+    atividadeTr.appendChild(criarTd(corredor.numero))
+    atividadeTr.appendChild(criarTd(corredor.distancia))
 
     return atividadeTr
 }
