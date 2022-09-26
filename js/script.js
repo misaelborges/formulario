@@ -21,8 +21,8 @@ function dadosFormulario(form) {
         cep: form.cep.value,
         numero: form.numero.value,
         email:form.email.value,
-        distancia: distancia(checket), 
-        idade: idade(nascimeto.value)
+        distancia: distancia(dist), 
+        idade: idade(dataNacimento.value)
     }
     return corredor
 }
@@ -31,18 +31,19 @@ function constroiTr(corredor) {
     let atividadeTr = document.createElement('tr')
     atividadeTr.classList.add('paciente')
 
-    atividadeTr.appendChild(criarTd(corredor.nome))
-    atividadeTr.appendChild(criarTd(corredor.cpf))
-    atividadeTr.appendChild(criarTd(corredor.idade))
-    atividadeTr.appendChild(criarTd(corredor.numero))
-    atividadeTr.appendChild(criarTd(corredor.distancia))
+    atividadeTr.appendChild(criarTd(corredor.nome, 'info-nome'))
+    atividadeTr.appendChild(criarTd(corredor.cpf, 'info-cpf'))
+    atividadeTr.appendChild(criarTd(corredor.idade, 'info-idade'))
+    atividadeTr.appendChild(criarTd(corredor.numero, 'info-numero'))
+    atividadeTr.appendChild(criarTd(corredor.distancia, 'info-distancia'))
 
     return atividadeTr
 }
 
-function criarTd(dado) {
+function criarTd(dado, classe) {
     var td = document.createElement('td')
     td.textContent = dado
+    td.classList.add(classe)
     return td
 }
 
