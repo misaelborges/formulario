@@ -70,3 +70,36 @@ function calcIdade(dataNascto) {
 
     return quantos_anos < 0 ? 0 : quantos_anos;
 }
+
+let tabela = document.querySelector('table')
+tabela.addEventListener('dblclick', function(event){
+    let alvo = event.target
+    let paiAlvo = alvo.parentNode
+    paiAlvo.classList.add('removeLinha')
+    setTimeout(function(){
+        paiAlvo.remove()
+    }, 500)
+})
+
+let campoBusca = document.querySelector('#filtro')
+campoBusca.addEventListener('input', function(){
+
+    let pacientes = document.querySelectorAll('.corredor')
+
+    for(let pos = 0; pos < pacientes.length; pos++) {
+        let paciente = pacientes[pos]
+        let nomeTd = paciente.querySelector('.info-nome')
+        let nome = nomeTd.textContent
+        let expressaoBusca = new RegExp(this.value, 'i')
+        
+        if(expressaoBusca.test(nome)) {
+            paciente.classList.remove('invisivel')
+        } else {
+            paciente.classList.add('invisivel')
+        }
+
+        if(this.value == '') {
+            paciente.classList.remove('invisivel')
+        }
+    }
+})

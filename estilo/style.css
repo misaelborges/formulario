@@ -75,4 +75,18 @@ th,td {
     padding: 5px;
 }
 
+.removeLinha{
+	opacity: 0;
+	transition: 0.1s;
+}
+
+#filtro {
+	width: 200px;
+	height: 25px;
+	margin-bottom: 5px;
+}
+
+.invisivel {
+	display: none;
+}
 
