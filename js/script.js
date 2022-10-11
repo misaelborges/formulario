@@ -21,11 +21,10 @@ function dadosFormulario(form) {
         nome: form.nome.value,
         cpf: form.cpf.value,
         nascimento: form.nascimento.value,
-        endereco: form.endereco.value,
-        cep: form.cep.value,
-        numero: form.numero.value,
         email:form.email.value,
+        numero: form.numero.value,
         distancia: form.dist.value,
+        idade: calcIdade(form.nascimento.value)   
     }
     return corredor
 }
@@ -36,7 +35,7 @@ function constroiTr(corredor) {
 
     atividadeTr.appendChild(criarTd(corredor.nome, 'info-nome'))
     atividadeTr.appendChild(criarTd(corredor.cpf, 'info-cpf'))
-    atividadeTr.appendChild(criarTd(calcIdade(corredor.nascimento), 'info-idade'))
+    atividadeTr.appendChild(criarTd(corredor.idade, 'info-idade'))
     atividadeTr.appendChild(criarTd(corredor.numero, 'info-numero'))
     atividadeTr.appendChild(criarTd(corredor.distancia, 'info-distancia'))
 
