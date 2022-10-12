@@ -7,4 +7,4 @@ Pojeto tem o foco na intereção de um formulario, onde o participante inseri os
 * 2° O usuario tambem podera fazer pesquisas dentro da tabela, caso necessario
 * 3° Caso um dos corredores desista da competição, existe a possibilidade de exluilo da competição dando um dublo clique em cima da linha do corredor que não participara da competição
 
-* Link para o projeto: https://formulario-72z3-psnmt9a2g-misaelborges.vercel.app/
+* Link para o projeto: https://formulario-72z3.vercel.app/
